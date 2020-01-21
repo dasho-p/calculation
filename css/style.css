@@ -1,0 +1,140 @@
+body{
+  background-color: rgb(227, 227, 227);
+  font-family: "TIMES_PV";
+}
+
+.calc{
+  border: 2px ridge rgb(135, 132, 132);
+  padding: 20px 10px 8px 10px;
+  width: 350px;
+  margin: auto;
+  border-radius: 25px;
+  text-align: inherit;
+  background-image: linear-gradient(rgb(188, 252, 179),  #18a116);
+  position: relative;
+  top: 40px;
+}
+.fild{
+  width: 100%;
+  height: 38px;
+  margin-bottom: 10px;
+  text-align: right;
+  padding-top: 10px;
+  font-size: 20px;
+  background-image: linear-gradient(rgb(197, 217, 245),  #FEFFFF);
+  border-radius: 5px;
+  border: 1px inset rgba(167, 177, 167, 0.85);
+}
+.block_rad{
+  font-size: 12px;
+  margin: 0px 3px 0px 0px;
+  padding: 2px 10px 5px 5px;
+  border: 1px solid rgb(16, 85, 4);
+  border-radius: 5px;
+}
+
+input[class^="fild-"],
+input[class^="fild_"],
+button[class^="fild-"],
+button[class^="fild_"],
+.rivne{
+  width: 35px;
+  height: 25px;  padding: 0px;
+  box-shadow: 0 0 3px #ccc;
+}
+
+.rivne{
+  height: 53px;
+  font-size: 20px;
+}
+.fild_res,
+.fild_bottom{
+  width: 350px;
+  height: 17px;
+  text-align: right;
+  margin-top: 2px;
+  position: absolute;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.fild_bottom{
+  margin-top: 37px;
+  color: red;
+  width: 303px;
+}
+.rad{
+  display: inline-block;
+}
+/*---------------------Стилі для кнопок------------------*/
+input[class^="fild-"]{
+  background: linear-gradient(to bottom, rgba(214,220,214,1) 0%, rgba(191,192,191,1) 0%, rgba(191,192,191,1) 2%, rgba(255,255,255,1) 50%, rgba(191,192,191,1) 79%, rgba(191,192,191,1) 92%, rgba(191,192,191,1) 100%);
+  border: 1px solid rgb(106, 102, 102);
+}
+input[class^="fild_"],
+button[class^="fild_"],
+.rivne{
+  background: linear-gradient(to bottom, rgba(204,204,204,1) 0%, rgba(172,171,170,1) 0%, rgba(184,179,173,1) 2%, rgba(234,234,234,1) 49%, rgba(234,234,234,1) 49%, rgba(235,235,235,1) 50%, rgba(172,171,170,1) 79%, rgba(172,171,170,1) 92%, rgba(164,163,162,1) 100%);
+  border: 1px solid rgb(106, 102, 102);
+}
+input[class^="fild-"]:hover,
+input[class^="fild_"]:hover,
+button[class^="fild-"]:hover,
+button[class^="fild_"]:hover,
+.rivne:hover{
+  border: 1px solid rgb(249, 157, 0);
+  box-shadow: 2px 2px 15px 0px rgba(15,15,15,1);
+  background: linear-gradient(to bottom, rgba(245,191,125,1) 0%, rgba(245,191,125,1) 7%, rgba(250,227,200,1) 20%, rgba(247,236,222,1) 46%, rgba(247,236,222,1) 49%, rgba(245,191,125,1) 71%, rgba(252,178,88,1) 100%);
+}
+input[class^="fild-"]:active,
+input[class^="fild_"]:active,
+button[class^="fild-"]:active,
+button[class^="fild_"]:active,
+.rivne:active{
+  border: 1px solid rgb(189, 121, 6);
+background: linear-gradient(to bottom, rgba(240,171,87,1) 0%, rgba(255,175,84,1) 20%, rgba(247,223,195,1) 46%, rgba(250,230,205,1) 49%, rgba(245,165,68,1) 71%, rgba(224,116,0,1) 100%);
+}
+/*---------------------Радіо-------------------------*/
+label {
+  font-family: "PTSANS", 'TIMES_PV';
+  font-size: 12px;
+  position: relative;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+label::before,
+label::after {
+  position: absolute;
+  top: 1px;
+  left: -10px;
+  content: '';
+  border-radius: 50%;
+  margin-left: -10px;
+}
+
+label::before {
+  width: 10px;
+  height: 10px;
+  border: solid 2px #5a5a5a;
+}
+
+label::after {
+  width: 14px;
+  height: 14px;
+  background-color: green;
+  transform: scale(0);
+  transition-duration: 0.4s;
+  transition-property: transform;
+}
+.rad2 label{
+  margin-left: 27px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked ~ label::after {
+  transform: scale(1.05);
+}

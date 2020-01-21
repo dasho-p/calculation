@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <link rel="stylesheet" href="css/font.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Calculation</title>
+</head>
+<body>
+  <form class="calc" action="index.html" method="post">
+    <output id="result_out" class="fild_res" name="result_out" value=""></output>
+    <output id="result_error" class="fild_bottom" name="result_out" value=""></output>
+    <input id="result" class="fild" type="text" name="fild_" value="" placeholder="0" onkeypress="return numOnly(event)">
+
+    <table>
+      <tr>
+        <td colspan="4">
+          <div class="block_rad">
+            <div class="rad">
+              <input id="one" class="radio1" type="radio" name="radio" checked onclick="radio_gra(1)">
+              <label for="one">Градуси</label>
+            </div>
+            <div class="rad2 rad">
+              <input id="too" class="radio1" type="radio" name="radio" onclick="radio_gra(2)">
+              <label for="too">Радіани</label>
+            </div>
+          </div>
+        </td>
+        <td>
+          <input class="fild_du_left" type="button" name="du_left" value="(" onclick="brakets(0)">
+        </td>
+        <td>
+          <input class="fild_du_right" type="button" name="du_right" value=")" onclick="brakets(1)">
+        </td>
+        <td>
+          <button class="fild_backspace" type="button" name="backspace" onclick="Blackspace()">⬅</button>
+        </td>
+        <td>
+          <input class="fild_ce" type="button" name="ce" value="CE" onclick="CE(1)">
+        </td>
+        <td>
+          <input class="fild_reset" type="reset" name="reset" value="C" onclick="CE(0)">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input class="fild_sinh" type="button" name="sinh" value="sinh" onclick="operation_x(10)">
+        </td>
+        <td>
+          <input class="fild_sin" type="button" name="sin" value="sin" onclick="operation_x(9)">
+        </td>
+        <td>
+          <button class="fild_x_to" type="button" name="x_to" onclick="operation_x(2)">x<sup>2</sup></button>
+        </td>
+        <td>
+          <input class="fild_n_fact" type="button" name="n_fac" value="n!" onclick="operation_x(1)">
+        </td>
+        <td>
+          <input class="fild-7" type="button" name="seven" value="7" onclick="Number(7)">
+        </td>
+        <td>
+          <input class="fild-8" type="button" name="eight" value="8" onclick="Number(8)">
+        </td>
+        <td>
+          <input class="fild-9" type="button" name="duvyat" value="9" onclick="Number(9)">
+        </td>
+        <td>
+          <input class="fild_div" type="button" name="div" value="/" onclick="operation(2)">
+        </td>
+        <td>
+          <input class="fild_sqrt" type="button" name="sqrt" value="√" onclick="operation_x(0)">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input class="fild_cosh" type="button" name="cosh" value="cosh" onclick="operation_x(12)">
+        </td>
+        <td>
+          <input class="fild_cos" type="button" name="cos" value="cos" onclick="operation_x(11)">
+        </td>
+        <td>
+          <button class="fild_x_y" type="button" name="fild_x_y" onclick="operation(5)">x<sup>y</sup></button>
+        </td>
+        <td>
+          <button class="fild_x_sqrt_y" type="button" name="x_sqrt_y" onclick="operation(6)"><sup>y</sup>√x</button>
+        </td>
+        <td>
+          <input class="fild-4" type="button" name="for" value="4" onclick="Number(4)">
+        </td>
+        <td>
+          <input class="fild-5" type="button" name="faif" value="5" onclick="Number(5)">
+        </td>
+        <td>
+          <input class="fild-6" type="button" name="sexs" value="6" onclick="Number(6)">
+        </td>
+        <td>
+          <input class="fild_mul" type="button" name="mul" value="*" onclick="operation(1)">
+        </td>
+        <td>
+          <input class="fild_mod" type="button" name="mod" value="%" onclick="operation(0)">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input class="fild_tanh" type="button" name="tanh" value="tanh" onclick="operation_x(14)">
+        </td>
+        <td>
+          <input class="fild_tan" type="button" name="tan" value="tan" onclick="operation_x(13)">
+        </td>
+        <td>
+          <button class="fild_x3" type="button" name="x_3" onclick="operation_x(3)">x<sup>3</sup></button>
+        </td>
+        <td>
+          <button class="fild_3_sqrt_x" type="button" name="3sqrtx" onclick="operation_x(4)"><sup>3</sup>√x</button>
+        </td>
+        <td>
+          <input class="fild-1" type="button" name="one" value="1" onclick="Number(1)">
+        </td>
+        <td>
+          <input class="fild-2" type="button" name="too" value="2" onclick="Number(2)">
+        </td>
+        <td>
+          <input class="fild-3" type="button" name="fri" value="3" onclick="Number(3)">
+        </td>
+        <td>
+          <input class="fild_sub" type="button" name="sub" value="-" onclick="operation(4)">
+        </td>
+        <td rowspan="2">
+          <input class="rivne" type="button" name="rivne" value="=" onclick="operation_rivne()">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input class="fild_pi" type="button" name="pi" value="pi" onclick="operation_x(7)">
+        </td>
+        <td>
+          <input class="fild_int" type="button" name="int" value="int" onclick="operation_x(8)">
+        </td>
+        <td>
+          <input class="fild_log" type="button" name="log" value="log" onclick="operation_x(6)">
+        </td>
+        <td>
+          <input class="fild_ln" type="button" name="ln" value="ln" onclick="operation_x(5)">
+        </td>
+        <td>
+          <input class="fild-0" type="button" name="null" value="0" onclick="Number(0)">
+        </td>
+        <td>
+          <input class="fild-sign" type="button" name="sign" value="+/-" onclick="znak()">
+        </td>
+        <td>
+          <input class="fild-point" type="button" name="point" value="." onclick="pointer()">
+        </td>
+        <td>
+          <input class="fild_add" type="button" name="add" value="+" onclick="operation(3)">
+        </td>
+      </tr>
+    </table>
+  </form>
+  <script type="text/javascript" src="js/calc.js"> </script>
+</body>
+</html>
